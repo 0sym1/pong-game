@@ -7,15 +7,12 @@ public class BallController : MonoBehaviour
     [SerializeField] private float random;
     [SerializeField] private float speed;
     // Start is called before the first frame update
+    void Awake(){
+        rg = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
-        rg = GetComponent<Rigidbody2D>();
         rg.velocity = new Vector3(0, -1, 0) * speed;
-    }
-
-    void Update()
-    {
-        
     }
 
     private void updateDirection(GameObject player){
